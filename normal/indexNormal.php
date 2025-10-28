@@ -5,7 +5,6 @@
 <html>
 
 <head>
-	<h1>indexnormal</h1>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -34,7 +33,7 @@
 	<!--Barra de navegación-->
 
 	<!--Contenido de la página-->
-	<section>
+	<section class="secuser">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mx-auto d-block">

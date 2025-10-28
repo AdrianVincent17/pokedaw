@@ -1,8 +1,24 @@
 
 
 /*GENERAL*/
-section{
-	background-image: url("img/fondoenllamas.jpg");
+.secprincipal{
+	background-image: url("img/fondoenllamasrojo.jpg");
+
+    /* Añade estas propiedades */
+    background-size: cover; /* Para que cubra todo el espacio */
+    background-position: center; /* Para que se centre */
+    min-height: 500px; /* ¡Dale altura para que se vea! */
+}
+.secadmin{
+	background-image: url("img/fondoenllamasverde.jpg");
+
+    /* Añade estas propiedades */
+    background-size: cover; /* Para que cubra todo el espacio */
+    background-position: center; /* Para que se centre */
+    min-height: 500px; /* ¡Dale altura para que se vea! */
+}
+.secuser{
+	background-image: url("img/fondoenllamasmorado.jpg");
 
     /* Añade estas propiedades */
     background-size: cover; /* Para que cubra todo el espacio */

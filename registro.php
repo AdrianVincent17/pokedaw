@@ -48,10 +48,11 @@
 								<input type="email" class="form-control" id="email" placeholder="Email">
 								<label for="email">Email <span class="form-text text-muted small float-end">EJ: xxxxxx@pokedaw.com</span></label>
 							</div>
+							<!--
 							<div class="form-floating mb-3"> <input type="number" class="form-control" id="tel" placeholder="Teléfonos">
 								<label for="email">Teléfonos<span class="form-text text-muted float-end small"> EJ: 968647842 || 636365874</span></label>
 							</div>
-							<!--
+							
 							<div class="form-floating mb-3 ">
 								<select class="form-select" id="tipo" name="tipo">
 									<option value="1">Administrador</option>

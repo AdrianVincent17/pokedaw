@@ -16,7 +16,6 @@
 </head>
 
 <body>
-	<h1>index</h1>
 	<!--Cabecera-->
 	<?php
 	include("conexion.php");
@@ -52,7 +51,7 @@
 	?>
 
 	<!--Contenido de la página-->
-	<section>
+	<section class="secprincipal">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mb-5 mt-3">

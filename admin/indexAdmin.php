@@ -22,8 +22,6 @@
 </head>
 
 <body>
-	<h1>ADMIN</h1>
-
 	<!--Cabecera-->
 	<?php
 	include("headerAdmin.php");
@@ -34,7 +32,7 @@
 	include("navAdmin.php");
 	?>
 	<!--Contenido de la página-->
-	<section>
+	<section class="secadmin">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mx-auto d-block">
