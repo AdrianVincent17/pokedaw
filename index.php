@@ -11,11 +11,12 @@
 	<script src="./Bootstrap/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 	<link href="styles.css" rel="stylesheet">
-	<link rel="icon" type="image/x-icon" href="img/grifo.ico">
-	<title>GESTIÓN - CES VEGA MEDIA</title>
+	<link rel="icon" type="image/x-icon" href="img/logofuego.ico">
+	<title>LOGIN - POKEDAW</title>
 </head>
 
 <body>
+	<h1>index</h1>
 	<!--Cabecera-->
 	<?php
 	include("conexion.php");
@@ -57,14 +58,14 @@
 				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mb-5 mt-3">
 					<div class="row justify justify-content-center titulos mt-5 mb-4">
 						<div class="col-12 mt-5">
-							<p class="h2 text-center">ACCEDE A TU CUENTA</p>
+							<p class="h1 text-center">ACCEDE A TU CUENTA</p>
 						</div>
 						<div class="col-8 mt-4">
 							<div class="row">
 								<form action="" method="POST">
 									<div class="col-12">
-										<input type="email" name="email" class="form-control" placeholder="email" required>
-										<span class="form-text text-muted small">EJ: fernando@pokedaw.com</span>
+										<input type="email" name="email" class="form-control" placeholder="E-MAIL" required>
+										<span class="form-text text-white small">EJ: admin@pokedaw.com</span>
 									</div>
 									<div class="col-12 mt-3 mb-2">
 										<input type="password" class="form-control" id="pass" name="pass" placeholder="CONTRASEÑA" required>

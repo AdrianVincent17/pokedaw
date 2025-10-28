@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg nav" id="main_navbar">
 		<div class="container-fluid">
+
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent"

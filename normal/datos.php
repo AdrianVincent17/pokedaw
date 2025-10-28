@@ -14,12 +14,13 @@
 	<?php
 
 	include("headerNormal.php");
-	include("navNormal.php");
 
 	?>
 
 	<!--Barra de navegación-->
-
+<?php
+include("navNormal.php");
+?>
 	<!--Contenido de la página-->
 	<section>
 		<div class="container">
@@ -29,7 +30,7 @@
 
 	<?php
 
-	include("../footer.php");
+	include("footerNormal.php");
 	
 
 	?>

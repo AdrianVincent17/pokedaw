@@ -1,10 +1,11 @@
 <?php
-include("seguridad.php");
+	include("seguridad.php");
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+	<h1>indexnormal</h1>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -15,8 +16,8 @@ include("seguridad.php");
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 	<link href="../styles.css" rel="stylesheet">
-	<link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?>img/pika1.ico">
-	<title>GESTIÓN POKEDAW</title>
+	<link rel="icon" type="image/x-icon" href="../img/logofuego.ico">
+	<title>PRINCIPAL-POKEDAW</title>
 
 
 </head>
@@ -36,14 +37,16 @@ include("seguridad.php");
 	<section>
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
-				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mb-5 mt-3">
+				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mx-auto d-block">
 					<div class="row justify justify-content-center titulos mt-5 mb-4">
-						<div class="col-12 mt-5">
-							<p class="h2 text-center">BIENVENIDO<br> <?php echo $_SESSION['name']; ?></p>
+						<div class="col-12 mt-4">
+							<p class="h1 text-center">BIENVENIDO</p>
+							<p class="h1 text-center"> <?php echo $_SESSION['name']; ?></p>
 						</div>
-						<div class="col-8 mt-4">
-							<div class="row">
-								<h1>USUARIO NORMAL</h1>
+						<div class="col-12 mt-4 mb-2">
+							<div class="row justify-content-center align-items-center">
+								<p class="h1 text-center">ROL DE USUARIO</p>
+								<p class="h1 text-center"> NORMAL</p>
 							</div>
 						</div>
 					</div>
@@ -56,7 +59,7 @@ include("seguridad.php");
 	<?php
 
 	include("footerNormal.php");
-
+	
 
 	?>
 

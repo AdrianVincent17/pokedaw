@@ -7,13 +7,13 @@
 			<div class="row justify-content-center footer1">
 				<div class="row justify-content-center mt-4">
 					<div class="col-auto" >
-						<a href="https://www.google.es/maps/place/CES+Vega+Media/@38.0515582,-1.253702,17z/data=!3m1!4b1!4m5!3m4!1s0xd647ed425284579:0xc1fae33ccb32d958!8m2!3d38.0515582!4d-1.253702" target="_blank">						
-						<i class="bi bi-geo-alt-fill"></i>&nbsp;&nbsp;CES VEGA MEDIA, S. COOP.						
+						<a href="https://maps.app.goo.gl/jC2w4hheqB9jnFHN9" target="_blank">						
+						<i class="bi bi-geo-alt-fill"></i>&nbsp;&nbsp;POKEDAW, S. COOP.						
 						</a>
 					</div>
 					<div class="w-100 d-sm-none"></div>	
 					<div class="col-auto ">
-						<i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;vegamedia@ces-vegamedia.es
+						<i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;admin@pokedaw.es
 					</div>				
 					<div class="w-100 d-sm-none"></div>	
 					<div class="col-auto" >
@@ -21,15 +21,17 @@
 					</div>				
 				</div>		
 				<div class="row justify-content-center align-items-center">
-					<div class="col-auto" >						
-							<img src="<?php echo BASE_URL; ?>img/pika1.png" style="width:80px">						
+					<div class="col-auto mt-4 mb-4" >						
+							<img src="<?php echo BASE_URL; ?>img/logofuego.png" style="width:80px">						
 					</div>
+					<!--
 					<div class="col-auto">						
 							<span class="ve"> P</span><span class="me">D</span>							
 					</div>
+					-->
 					<div class="col-12 ">
-						<p class="text-center">	Ctra. De Mula, 37 – Alguazas
-							30560 – Murcia</p>					
+						<p class="text-center">	Ruta 112, 7 – Pueblo Lavacalda
+							904-2144 – HOENN</p>					
 					</div>					
 				</div>
 				<div class="row justify-content-center mb-2 links">
@@ -49,8 +51,8 @@
 			</div>
 			<div class="row">	
 				<div class="col-12 text-center footer2">							
-					<p class="mb-3 mt-2 small">COOPERATIVA COFINANCIADA POR EL FSE Y POR LA CARM        |        DESCUBRE TU TALENTO: + FP + OPORTUNIDADES<br>
-					2022 CES VEGA MEDIA     |     CENTRO DE ENSEÑANZA©</p>							
+					<p class="mb-3 mt-2 small">DESCUBRE TU TALENTO: HAZTE ENRENADOR POKEMON<br>
+					2025 CENTRO POKEMON ©</p>							
 				</div>				
 			</div>
 		</div>		

@@ -12,4 +12,4 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 	<link href="../styles.css" rel="stylesheet">
-	<link rel="icon" type="image/x-icon" href="../img/grifo.ico">
+	<link rel="icon" type="image/x-icon" href="<?php echo BASE_URL;?>img/pika1.png">
