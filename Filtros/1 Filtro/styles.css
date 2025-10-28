@@ -1,0 +1,111 @@
+
+
+/*GENERAL*/
+section{
+	background-color: #f8f8f8;
+}
+.titulos{		 
+	border-radius:8px;	
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+	color: #9dbe15;
+	border:3px solid #9dbe15;		
+	background-color: white;	
+}
+
+.btn{
+	background-color: #9dbe15;
+	color:white;		
+	font-weight: bold;	
+}
+.btn:hover{
+	color:#9dbe15;
+	border: 1px solid #9dbe15;
+}
+.h2{
+	font-size: 21pt;
+}
+.cuenta{
+	font-size: 13pt;
+	color: #9dbe15;
+}
+.form-text{
+	font-size: 9pt;
+}
+
+
+/*HEADER*/
+.cabecera{
+	
+	background-color:#9dbe15;
+}
+
+.h1{
+	color: #ffffff;			
+	font-weight: bold;
+	font-size: 20pt;
+}
+
+.centro{
+	font-size: 15pt;
+	font-weight: bold;
+	color: white;
+}
+
+.izq{
+	background-image: linear-gradient(to right,white, #9dbe15);
+	height: 5px;
+}
+.der{
+	background-image: linear-gradient(to right, #9dbe15,white);
+	height: 5px;
+}
+.v{
+	font-size: 60pt;
+	font-weight: bold;
+	color:black;				
+}
+
+			
+
+/*FOOTER*/
+
+.footer1{
+	background-image: linear-gradient(180deg,rgb(59, 59, 59), rgb(32, 32, 32));	
+	color:white;
+}
+.footer2{
+	background-color: rgb(59, 59, 59);
+	color:white;
+}
+footer a{
+	text-decoration: none;
+	color:white;
+}	
+.ve{
+	font-size: 60pt;
+	font-weight: bold;
+	color:#9dbe15;				
+}
+.me{
+	font-size: 60pt;
+	font-weight: bold;
+	color: white;						
+}
+.links a{
+	color:#9dbe15;
+}
+.links a:hover{
+	
+	color: white;
+}
+footer a:hover{
+	color:white;
+}
+
+
+
+
+
+
+
+
