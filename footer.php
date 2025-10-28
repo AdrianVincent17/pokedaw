@@ -22,10 +22,10 @@
 				</div>		
 				<div class="row justify-content-center align-items-center">
 					<div class="col-auto" >						
-							<img src="<?php echo BASE_URL; ?>img/grifo.png" style="width:80px">						
+							<img src="<?php echo BASE_URL; ?>img/pika1.png" style="width:80px">						
 					</div>
 					<div class="col-auto">						
-							<span class="ve"> V</span><span class="me">M</span>							
+							<span class="ve"> P</span><span class="me">D</span>							
 					</div>
 					<div class="col-12 ">
 						<p class="text-center">	Ctra. De Mula, 37 – Alguazas

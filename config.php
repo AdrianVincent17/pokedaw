@@ -1,3 +1,3 @@
 <?php
-define('BASE_URL', '/PokeDaw/');
+define('BASE_URL', '/pokedaw/');
 ?>
