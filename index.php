@@ -32,14 +32,17 @@
 				$row = mysqli_fetch_assoc($result);
 				if ($row["rol"] == 0) {
 					$_SESSION['name']=$row["nombre"];
+					$_SESSION['dni']=$row['nif'];
 					header("LOCATION:normal/indexNormal.php");
 				} else if ($row["rol"] == 1) {
+					$_SESSION['name']=$row["nombre"];
+					$_SESSION['dni']=$row['nif'];
 					header("LOCATION:admin/indexAdmin.php");
 				} else {
 					$sms = "Rol incorrecto, consulte con el administrador";
 				}
 			} else if (mysqli_num_rows($result) > 1) {
-				//Fallo de integridad en la bbdd
+				//fallo de integridad en bbdd
 			} else {
 				$sms = "Usuario no registrado o pass incorrecto o email incorrecto";
 			}

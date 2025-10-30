@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2025 a las 22:16:25
+-- Tiempo de generación: 29-10-2025 a las 22:07:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -45,8 +45,7 @@ CREATE TABLE `cartas_base` (
 
 DROP TABLE IF EXISTS `coleccion`;
 CREATE TABLE `coleccion` (
-  `id_item` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
+  `id_user` varchar(9) NOT NULL,
   `id_carta` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -59,13 +58,12 @@ CREATE TABLE `coleccion` (
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
   `NIF` varchar(9) NOT NULL,
   `email` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellidos` varchar(255) NOT NULL,
-  `pass` varchar(255) NOT NULL,
   `telefono` varchar(15) NOT NULL,
+  `pass` varchar(255) NOT NULL,
   `rol` int(11) NOT NULL COMMENT '0->Normal\r\n1-->admin',
   `fecha_registro` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -74,9 +72,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `NIF`, `email`, `nombre`, `apellidos`, `pass`, `telefono`, `rol`, `fecha_registro`) VALUES
-(1, '', 'admin@pokedaw.com', 'Fernando', '', '1234', '', 1, '2025-10-28 20:01:02'),
-(2, '', 'normal@pokedaw.com', 'Mini Fer', '', '1234', '', 0, '2025-10-28 20:01:02');
+INSERT INTO `usuarios` (`NIF`, `email`, `nombre`, `apellidos`, `telefono`, `pass`, `rol`, `fecha_registro`) VALUES
+('43219842X', 'admin@pokedaw.com', 'Adrián', 'Vicente López', '623411852', '1234', 1, '2025-10-29 21:00:53'),
+('46623571R', 'juan.moya@gmail.com', 'Juan', 'Moya Sayas', '662319744', '1234', 0, '2025-10-29 21:06:50');
 
 --
 -- Índices para tablas volcadas
@@ -86,33 +84,24 @@ INSERT INTO `usuarios` (`id`, `NIF`, `email`, `nombre`, `apellidos`, `pass`, `te
 -- Indices de la tabla `cartas_base`
 --
 ALTER TABLE `cartas_base`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indices de la tabla `coleccion`
 --
 ALTER TABLE `coleccion`
-  ADD PRIMARY KEY (`id_item`),
-  ADD KEY `FK` (`id_user`,`id_carta`),
-  ADD KEY `id_carta` (`id_carta`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `id_carta` (`id_carta`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`NIF`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD KEY `id` (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  ADD KEY `NIF` (`NIF`);
 
 --
 -- Restricciones para tablas volcadas
@@ -123,7 +112,7 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `coleccion`
   ADD CONSTRAINT `coleccion_ibfk_1` FOREIGN KEY (`id_carta`) REFERENCES `cartas_base` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `coleccion_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `coleccion_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `usuarios` (`NIF`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

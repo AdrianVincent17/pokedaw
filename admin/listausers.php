@@ -1,6 +1,31 @@
 <?php
 	include("seguridad.php");
+
 ?>
+<?php
+        include("../conexion.php");
+        //Lógica del fichero
+        $consulta = "Select * from usuarios";
+
+        $result = mysqli_query($conn, $consulta);
+
+        $listausuarios = "";
+
+        while ($row = mysqli_fetch_array($result)) {
+                $listausuarios.="<strong>NIF: </strong>" . $row['nif'] . "<br>".
+                "<strong>E-mail: </strong>" . $row['email'] . "<br>".
+                "<strong>Nombre: </strong>" . $row['nombre'] . "<br>".
+                "<strong>Apellidos: </strong>" . $row['apellidos'] . "<br>".
+                "<strong>Teléfono: </strong>" . $row['telefono'] . "<br>";
+            if ($row['rol'] == 0) {
+                $listausuarios.="<strong>Rol: </strong> Sin permisos de Administrador" . "<br><br>";
+            } else {
+                $listausuarios.="<strong>Rol: </strong> Administrador" . "<br><br>";
+            }
+        }
+        //Cerramos la conexión
+        mysqli_close($conn);
+        ?>
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +41,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 	<link href="../styles.css" rel="stylesheet">
 	<link rel="icon" type="image/x-icon" href="../img/logofuego.ico">
-	<title>PRINCIPAL-POKEDAW</title>
+	<title>DATOS-POKEDAW</title>
 
 
 </head>
@@ -39,14 +64,11 @@
 				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mx-auto d-block">
 					<div class="row justify justify-content-center titulos mt-5 mb-4">
 						<div class="col-12 mt-4">
-							<p class="h1 text-center">BIENVENIDO</p>
-							<p class="h1 text-center"> <?php echo $_SESSION['name']; ?></p>
+							<p class="h1 mb-6 text-center">LISTA DE USUARIOS</p>
+							<p class="mt-4 text-start text-light"><?php echo $listausuarios; ?></p>
 						</div>
 						<div class="col-12 mt-4 mb-2">
-							<div class="row justify-content-center align-items-center">
-								<p class="h1 text-center">ROL DE USUARIO</p>
-								<p class="h1 text-center"> ADMINISTRADOR</p>
-							</div>
+							
 						</div>
 					</div>
 
@@ -70,3 +92,4 @@
 </body>
 
 </html>
+

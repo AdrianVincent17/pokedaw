@@ -11,7 +11,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" href="#"><i class="bi bi-file-earmark-post-fill"> Dashboard</i></a>
+					<a class="nav-link" href="indexAdmin.php"><i class="bi bi-file-earmark-post-fill"> Dashboard</i></a>
 				</li>
 
 				<li class="nav-item dropdown">
@@ -19,9 +19,9 @@
 						<i class="bi bi-person-fill-gear">Gestion Usuarios</i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Datos</a></li>
-						<li><a class="dropdown-item" href="#">Alta</a></li>
-						<li><a class="dropdown-item" href="#">Baja</a></li>
+						<li><a class="dropdown-item" href="listausers.php">Datos</a></li>
+						<li><a class="dropdown-item" href="registro.php">Alta</a></li>
+						<li><a class="dropdown-item" href="formulario_bajas.php">Baja</a></li>
 						<li><a class="dropdown-item" href="#">Modificacion</a></li>
 						<li><a class="dropdown-item" href="#">Suspension</a></li>
 						<li><a class="dropdown-item" href="#">Permisos</a></li>
@@ -66,7 +66,7 @@
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<i class="bi bi-person-fill"> <?php echo $_SESSION['name']; ?></a></i>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+							<li><a class="dropdown-item" href="../logout.php">Cerrar sesión</a></li>
 						</ul>
 					</li>
 
