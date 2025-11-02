@@ -31,7 +31,7 @@ $result = mysqli_query($conn, $consulta);
 
 </head>
 
-<body>
+<body class="secadmin">
 	<!--Cabecera-->
 	<?php
 
@@ -43,7 +43,7 @@ $result = mysqli_query($conn, $consulta);
 	<!--Barra de navegación-->
 
 	<!--Contenido de la página-->
-	<section class="secadmin">
+	<section>
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 

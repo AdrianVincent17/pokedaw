@@ -13,14 +13,14 @@
 	<title>REGISTRO- ADMIN - POKEDAW</title>
 </head>
 
-<body>
+<body class="secadmin">
 	<!--Cabecera-->
 	<?php
 	include("headerAdmin.php")
 	?>
 	<!--Contenido de la página-->
-	<section class="secadmin">
-		<div class="container">
+	<section class="site-wrapper">
+		<div class="container site-content">
 			<form action="altas.php" method="POST">
 				<div class="row justify-content-center align-items-center ">
 					<div class="col-11 col-sm-12 col-lg-11 col-xl-10 mb-4 mt-4">

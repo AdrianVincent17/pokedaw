@@ -22,7 +22,7 @@
 
 	</head>
 
-	<body>
+	<body class="secadmin">
 		<!--Cabecera-->
 		<?php
 
@@ -34,7 +34,7 @@
 		<!--Barra de navegación-->
 
 		<!--Contenido de la página-->
-		<section class="secadmin">
+		<section>
 			<div class="container">
 				<div class="row justify-content-center align-items-center">
 					<div class="col-9 col-sm-8 col-md-6 col-xl-4 mx-auto d-block">

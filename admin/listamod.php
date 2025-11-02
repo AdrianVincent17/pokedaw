@@ -27,13 +27,13 @@ $email=$row['email'];
 	<title>MODIFICACION - ADMIN - POKEDAW</title>
 </head>
 
-<body>
+<body class="secadmin">
 	<!--Cabecera-->
 	<?php
 	include("headerAdmin.php")
 	?>
 	<!--Contenido de la página-->
-	<section class="secadmin">
+	<section>
 		<div class="container">
 			<form action="modificacion.php" method="POST">
 				<div class="row justify-content-center align-items-center ">

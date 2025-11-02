@@ -41,10 +41,10 @@ if (isset($_POST['modcarta'])) {
     <link href="../styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="secadmin">
     <?php include("headerAdmin.php"); ?>
 
-    <section class="secadmin">
+    <section>
         <div class="container">
             <h2 class="text-center mb-4 text-light">Modificar Carta: <?php $datos_carta['nombre']; ?></h2>
             

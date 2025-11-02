@@ -12,13 +12,13 @@
 	<title>AÑADIR-CARTAS- ADMIN - POKEDAW</title>
 </head>
 
-<body>
+<body class="secadmin">
 	<!--Cabecera-->
 	<?php
 	include("headerAdmin.php")
 	?>
 	<!--Contenido de la página-->
-	<section class="secadmin">
+	<section>
 		<div class="container">
 			<form action="altacarta.php" enctype="multipart/form-data" method="POST">
 				<div class="row justify-content-center align-items-center ">
