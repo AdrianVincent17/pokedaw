@@ -7,17 +7,17 @@
 			<div class="row justify-content-center footer1">
 				<div class="row justify-content-center mt-4">
 					<div class="col-auto" >
-						<a href="https://maps.app.goo.gl/jC2w4hheqB9jnFHN9" target="_blank">						
-						<i class="bi bi-geo-alt-fill"></i>&nbsp;&nbsp;POKEDAW, S. COOP.						
+						<a  class="bi bi-geo-alt-fill" href="https://maps.app.goo.gl/jC2w4hheqB9jnFHN9" target="_blank">&nbsp;&nbsp;POKEDAW, S. COOP.</a>												
 						</a>
 					</div>
 					<div class="w-100 d-sm-none"></div>	
 					<div class="col-auto ">
-						<i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;admin@pokedaw.es
+						<a  class="bi bi-envelope-fill" href="mailto:admin@pokedaw.com">&nbsp;&nbsp;admin@pokedaw.es</a>
+				
 					</div>				
 					<div class="w-100 d-sm-none"></div>	
 					<div class="col-auto" >
-						<i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;968 620 913<br>
+						<a  class="bi bi-telephone-fill"href="tel:968620913" target="_blank">&nbsp;&nbsp;968 620 913</a>
 					</div>				
 				</div>		
 				<div class="row justify-content-center align-items-center">

@@ -15,7 +15,7 @@
 	<title>LOGIN - POKEDAW</title>
 </head>
 
-<body>
+<body class="secprincipal">
 	<!--Cabecera-->
 	<?php
 	include("conexion.php");
@@ -31,13 +31,13 @@
 				//Usuario registrado
 				$row = mysqli_fetch_assoc($result);
 				if ($row["rol"] == 0) {
-					$_SESSION['name']=$row["nombre"];
-					$_SESSION['dni']=$row['nif'];
+					$_SESSION['nombre']=$row["nombre"];
+					$_SESSION['nif']=$row['nif'];
 					$_SESSION['rol']=$row['rol'];
 					header("LOCATION:normal/indexNormal.php");
 				} else if ($row["rol"] == 1) {
-					$_SESSION['name']=$row["nombre"];
-					$_SESSION['dni']=$row['nif'];
+					$_SESSION['nombre']=$row["nombre"];
+					$_SESSION['nif']=$row['nif'];
 					$_SESSION['rol']=$row['rol'];
 					header("LOCATION:admin/indexAdmin.php");
 				} else {
@@ -56,8 +56,8 @@
 	?>
 
 	<!--Contenido de la página-->
-	<section class="secprincipal">
-		<div class="container">
+	<section class="site-wrapper">
+		<div class="container site-content">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mb-5 mt-3">
 					<div class="row justify justify-content-center titulos mt-5 mb-4">

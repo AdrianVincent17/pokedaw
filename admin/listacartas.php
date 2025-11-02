@@ -35,8 +35,8 @@ $result = mysqli_query($conn, $consulta);
     include("navAdmin.php");
     ?>
 
-    <section>
-        <div class="container">
+    <section class="site-wrapper">
+        <div class="container site-content">
             <div class="row justify-content-center align-items-center">
                 <div class="col-2 mt-2">
                     <a href="añadecarta.php" class="btn ms-6 btn-danger">Añadir Nueva Carta</a>

@@ -44,8 +44,8 @@ if (isset($_POST['modcarta'])) {
 <body class="secadmin">
     <?php include("headerAdmin.php"); ?>
 
-    <section>
-        <div class="container">
+    <section class="site-wrapper">
+        <div class="container site-content">
             <h2 class="text-center mb-4 text-light">Modificar Carta: <?php $datos_carta['nombre']; ?></h2>
             
             <form action="modificarcartas.php" method="POST" enctype="multipart/form-data" class="col-md-6 mx-auto text-light">

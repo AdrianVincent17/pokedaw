@@ -19,9 +19,7 @@
 						<i class="bi bi-person-fill-gear">Colecciones</i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Mi Catalogo</a></li>
-						<li><a class="dropdown-item" href="#">Añadir</a></li>
-						<li><a class="dropdown-item" href="#">Eliminar</a></li>
+						<li><a class="dropdown-item" href="listacartas.php">Mi Coleccion</a></li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
@@ -29,9 +27,8 @@
 						<i class="bi bi-person-fill-gear">Mi perfil</i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Mis Datos</a></li>
-						<li><a class="dropdown-item" href="#">Modificar Datos</a></li>
-						<li><a class="dropdown-item" href="../Formulario_bajas.php">Eliminar Cuenta</a></li>
+						<li><a class="dropdown-item" href="moduser.php">Mis Datos</a></li>
+						<li><a class="dropdown-item" href="Formulario_bajas.php">Eliminar Cuenta</a></li>
 					</ul>
 				</li>
 				
@@ -57,7 +54,7 @@
 			<ul class="navbar-nav mx-6">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-							<i class="bi bi-person-fill"> <?php echo $_SESSION['name']; ?></a></i>
+							<i class="bi bi-person-fill"> <?php echo $_SESSION['nombre']; ?></a></i>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="../logout.php">Cerrar sesión</a></li>
 						</ul>

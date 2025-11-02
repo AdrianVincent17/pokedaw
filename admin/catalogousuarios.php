@@ -93,8 +93,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario_email'])) {
 <body class="secadmin">
     <?php include("headerAdmin.php"); ?>
 
-    <section>
-        <div class="container">
+    <section class="site-wrapper">
+        <div class="container site-content">
             <h2 class="text-center mb-5 text-light">Coleccion de usuarios</h2>
 
             <form action="catalogousuarios.php" method="POST" class="col-md-6 mx-auto mb-5">

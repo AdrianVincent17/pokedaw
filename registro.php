@@ -12,14 +12,14 @@
 	<title>REGISTRO - POKEDAW</title>
 </head>
 
-<body>
+<body class="secuser">
 	<!--Cabecera-->
 	<?php
 	include("header.php")
 	?>
 	<!--Contenido de la página-->
-	<section class="secuser">
-		<div class="container ">
+	<section class="site-wrapper">
+		<div class="container site-content">
 			<form action="altas.php" method="post">
 				<div class="row justify-content-center align-items-center ">
 					<div class="col-11 col-sm-12 col-lg-11 col-xl-10 mb-4 mt-4">
@@ -85,6 +85,7 @@
 
 								<div class="d-grid col-12 mx-auto mb-4 mt-4">
 									<button class="btn btn-lg" type="submit">CREAR CUENTA</button>
+									<a class="text-center" href="index.php">Volver</a>
 								</div>
 							</div>
 						</div>

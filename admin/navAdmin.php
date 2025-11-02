@@ -60,7 +60,7 @@
 			<ul class="navbar-nav mx-4">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="bi bi-person-fill"> <?php echo $_SESSION['name']; ?></a></i>
+							<i class="bi bi-person-fill"> <?php echo $_SESSION['nombre']; ?></a></i>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="../logout.php">Cerrar sesión</a></li>
 						</ul>

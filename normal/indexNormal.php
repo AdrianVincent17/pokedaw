@@ -39,13 +39,13 @@
 				<div class="col-9 col-sm-8 col-md-6 col-xl-4 mx-auto d-block">
 					<div class="row justify justify-content-center titulos mt-5 mb-4">
 						<div class="col-12 mt-4">
-							<p class="h1 text-center">BIENVENIDO</p>
-							<p class="h1 text-center"> <?php echo $_SESSION['name']; ?></p>
+							<p class="h1 text-center">BIENVENIDO/A</p>
+							<p class="h1 text-center"> <?php echo $_SESSION['nombre']; ?></p>
 						</div>
 						<div class="col-12 mt-4 mb-2">
 							<div class="row justify-content-center align-items-center">
 								<p class="h1 text-center">ROL DE USUARIO</p>
-								<p class="h1 text-center"> NORMAL</p>
+								<p class="h4 text-light text-center"> NORMAL</p>
 							</div>
 						</div>
 					</div>

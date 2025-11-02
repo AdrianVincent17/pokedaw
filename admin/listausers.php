@@ -43,8 +43,8 @@ $result = mysqli_query($conn, $consulta);
 	<!--Barra de navegación-->
 
 	<!--Contenido de la página-->
-	<section>
-		<div class="container">
+	<section class="site-wrapper">
+		<div class="container site-content">
 			<div class="row justify-content-center align-items-center">
 
 				<table class="table table-striped table-hover text-light">
