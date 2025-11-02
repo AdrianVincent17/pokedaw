@@ -33,10 +33,12 @@
 				if ($row["rol"] == 0) {
 					$_SESSION['name']=$row["nombre"];
 					$_SESSION['dni']=$row['nif'];
+					$_SESSION['rol']=$row['rol'];
 					header("LOCATION:normal/indexNormal.php");
 				} else if ($row["rol"] == 1) {
 					$_SESSION['name']=$row["nombre"];
 					$_SESSION['dni']=$row['nif'];
+					$_SESSION['rol']=$row['rol'];
 					header("LOCATION:admin/indexAdmin.php");
 				} else {
 					$sms = "Rol incorrecto, consulte con el administrador";

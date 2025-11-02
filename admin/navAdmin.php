@@ -11,7 +11,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" href="indexAdmin.php"><i class="bi bi-file-earmark-post-fill"> Dashboard</i></a>
+					<a class="nav-link" href="indexAdmin.php"><i class="bi bi-file-earmark-post-fill"> Inicio</i></a>
 				</li>
 
 				<li class="nav-item dropdown">
@@ -20,10 +20,7 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="listausers.php">Datos</a></li>
-						<li><a class="dropdown-item" href="registro.php">Alta</a></li>
-						<li><a class="dropdown-item" href="formulario_bajas.php">Baja</a></li>
-						<li><a class="dropdown-item" href="#">Modificacion</a></li>
-						<li><a class="dropdown-item" href="#">Suspension</a></li>
+						<li><a class="dropdown-item" href="registro.php">Añadir usuarios</a></li>
 						<li><a class="dropdown-item" href="#">Permisos</a></li>
 					</ul>
 				</li>

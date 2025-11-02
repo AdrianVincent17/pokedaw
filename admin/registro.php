@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +21,7 @@
 	<!--Contenido de la página-->
 	<section class="secadmin">
 		<div class="container">
-			<form action="altas.php" method="post">
+			<form action="altas.php" method="POST">
 				<div class="row justify-content-center align-items-center ">
 					<div class="col-11 col-sm-12 col-lg-11 col-xl-10 mb-4 mt-4">
 						<div class="row justify-content-center titulos mt-4 mb-4">

@@ -10,13 +10,14 @@ $tel=$_POST['telefono'];
 $rol=$_POST['rol'];
 $pass=$_POST['pass'];
 $pass2=$_POST['pass2'];
+$bloqueo=0;
 
 if($pass!==$pass2){
     $_SESSION['error']=true;
     header("LOCATION:registro.php");
 }else{
-    $consulta = "INSERT INTO usuarios (nif,email,nombre,apellidos,telefono,pass,rol) 
-VALUES ('$nif','$email','$nom','$ape','$tel','$pass','$rol')";
+    $consulta = "INSERT INTO usuarios (nif,email,nombre,apellidos,telefono,pass,rol,bloqueo) 
+VALUES ('$nif','$email','$nom','$ape','$tel','$pass','$rol','$bloqueo')";
 
 //ejecutamos la sentencia SQL
 mysqli_query($conn,$consulta);
