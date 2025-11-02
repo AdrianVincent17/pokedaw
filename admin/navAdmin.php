@@ -29,10 +29,9 @@
 						<i class="bi bi-person-fill-gear">Colecciones</i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Catalogo</a></li>
-						<li><a class="dropdown-item" href="#">Añadir</a></li>
-						<li><a class="dropdown-item" href="#">Eliminar</a></li>
-						<li><a class="dropdown-item" href="#">Modificar</a></li>
+						<li><a class="dropdown-item" href="listacartas.php">Catalogo</a></li>
+						<li><a class="dropdown-item" href="catalogousuarios.php">Catalogo Usuarios</a></li>
+					
 					</ul>
 				</li>
 				<li class="nav-item">
