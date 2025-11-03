@@ -1,95 +1,91 @@
 <?php
-include("seguridad.php"); // Asegura que solo el Admin pueda ver esto
+// catalogo_cartas_usuario.php (Vista Admin)
+// Aseguramos que la sesión inicia
+include("seguridad.php"); // <--- CORREGIDO: Usamos la seguridad para el rol Admin
 include("../conexion.php");
+
+// Si la seguridad_admin.php no incluye session_start(), añádelo arriba.
+// Comprobamos la conexión aquí, en caso de que la seguridad_admin.php no lo haga.
+if (!$conn) {
+    die("Error de conexión a la base de datos.");
+}
 
 $usuarios = [];
 $cartas_del_usuario = [];
 $usuario_seleccionado_email = '';
 $usuario_seleccionado_nif = '';
 
-// 1. OBTENER TODOS LOS USUARIOS PARA EL MENÚ DESPLEGABLE
-$sql_usuarios = "SELECT nif, email FROM usuarios ORDER BY email ASC";
-$result_usuarios = mysqli_query($conn, $sql_usuarios);
+// 1. OBTENER Y LLENAR ARRAY $usuarios para el desplegable (LÓGICA FALTANTE)
+$sql_usuarios = "SELECT NIF, email, nombre, apellidos FROM usuarios ORDER BY email ASC";
+$result_usuarios = mysqli_query($conn, $sql_usuarios); // <--- AÑADIDO: Ejecutar la consulta
 
 if ($result_usuarios) {
     while ($row = mysqli_fetch_assoc($result_usuarios)) {
-        $usuarios[] = $row;
+        // Concatenamos nombre y email para una mejor vista en el desplegable
+        $row['nombre_completo'] = $row['nombre'] . ' ' . $row['apellidos'];
+        $usuarios[] = $row; 
     }
+} else {
+    // Manejo de error si la consulta SQL falla
+    die("Error al obtener la lista de usuarios: " . mysqli_error($conn));
 }
 
-// 2. PROCESAR LA SELECCIÓN DEL FORMULARIO
+
+// 2. Procesar la selección (Recibe POST)
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario_email'])) {
-
+    
     $usuario_seleccionado_email = mysqli_real_escape_string($conn, $_POST['usuario_email']);
-
-    // Buscar el NIF del usuario seleccionado (lo necesitamos para la tabla 'colecciones')
-    $sql_nif = "SELECT nif FROM usuarios WHERE email = '$usuario_seleccionado_email'";
-    $result_nif = mysqli_query($conn, $sql_nif);
-
-    if ($result_nif && $row_nif = mysqli_fetch_assoc($result_nif)) {
-        $usuario_seleccionado_nif = $row_nif['nif'];
-
-        // 3. CONSULTA PARA OBTENER LAS CARTAS DE ESE USUARIO
-        // Asumimos: 
-        // - 'colecciones' es la tabla que une usuarios con cartas.
-        // - 'colecciones.usuario_nif' guarda el NIF.
-        // - 'colecciones.carta_id' guarda el ID de la carta.
-
+    
+    // Obtener NIF del usuario seleccionado (usando el array que ya cargamos)
+    foreach ($usuarios as $user) {
+        if ($user['email'] === $usuario_seleccionado_email) {
+            $usuario_seleccionado_nif = $user['NIF']; // Usamos 'NIF' mayúscula según tu tabla
+            break;
+        }
+    }
+    
+    if ($usuario_seleccionado_nif) {
+        // CONSULTA CLAVE: Colección del usuario seleccionado
         $sql_cartas = "
             SELECT 
-                cb.nombre, 
-                cb.tipo, 
-                cb.imagen, 
-                co.cantidad
+                cb.nombre, cb.imagen, cb.tipo, co.cantidad 
             FROM cartas_base cb
             INNER JOIN coleccion co ON cb.id = co.id_carta
             WHERE co.id_user = '$usuario_seleccionado_nif'
             AND co.cantidad > 0
             ORDER BY cb.nombre ASC
         ";
-
+        
         $result_cartas = mysqli_query($conn, $sql_cartas);
-
+        
         if ($result_cartas) {
-            while ($row_carta = mysqli_fetch_assoc($result_cartas)) {
-                $cartas_del_usuario[] = $row_carta;
+            while ($row = mysqli_fetch_assoc($result_cartas)) {
+                $cartas_del_usuario[] = $row;
             }
         }
     }
 }
+// NOTA: Cerramos la conexión al final del HTML.
 ?>
+
 <!DOCTYPE html>
 <html>
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-<head>
-    <meta charset="utf-8">
-    <title>CARTAS USUARIOS - ADMIN</title>
-    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../styles.css" rel="stylesheet">
-    <script src="../Bootstrap/js/bootnavbar.js"></script>
-    <script>
-        new bootnavbar();
-    </script>
-    <style>
-        /* Estilos básicos para las cartas */
-        .card-item {
-            border: 1px solid #444;
-            padding: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            border-radius: 8px;
-        }
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        .card-item img {
-            max-height: 150px;
-            width: auto;
-            border-radius: 4px;
-        }
-    </style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+	<link href="../styles.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="../img/logofuego.ico">
+	<title>CATALOGO USUARIOS-POKEDAW</title>
+
+
 </head>
-
 <body class="secadmin">
     <?php include("headerAdmin.php"); ?>
 
@@ -105,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario_email'])) {
                         <?php foreach ($usuarios as $user) : ?>
                             <option value="<?php echo htmlspecialchars($user['email']); ?>"
                                 <?php if ($usuario_seleccionado_email == $user['email']) echo 'selected'; ?>>
-                                <?php echo htmlspecialchars($user['email']); ?>
+                                <?php echo htmlspecialchars($user['email']) . " (" . htmlspecialchars($user['nombre_completo']) . ")"; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -115,17 +111,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario_email'])) {
             <?php if ($usuario_seleccionado_email) : ?>
                 <hr class="text-light">
                 <h3 class="text-light text-center mb-4">CARTAS DE:<br> <?php echo htmlspecialchars($usuario_seleccionado_email); ?></h3>
-
                 <?php if (!empty($cartas_del_usuario)) : ?>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <?php foreach ($cartas_del_usuario as $carta) : ?>
                             <div class="col">
                                 <div class="card-item">
-                                    <img src="../cartas/<?php echo htmlspecialchars($carta['imagen']); ?>" alt="<?php echo htmlspecialchars($carta['nombre']); ?>" class="img-fluid mb-2">
-                                    <h5><?php echo htmlspecialchars($carta['nombre']); ?></h5>
-                                    <p>Tipo: <?php echo htmlspecialchars($carta['tipo']); ?></p>
-                                    <p class="badge bg-success fs-5">Cantidad: <?php echo (int)$carta['cantidad']; ?></p>
+                                    <img src="../cartas/<?php echo htmlspecialchars($carta['imagen']); ?>" alt="<?php echo htmlspecialchars($carta['nombre']); ?>" class="max-width:250px img-fluid mb-2">
+                                    <h5 class="card-title text-light text-center me-5"><?php echo htmlspecialchars($carta['nombre']); ?></h5>
+                                    <p class="mx-5 ms-2 badge bg-success fs-5">Cantidad: <?php echo (int)$carta['cantidad']; ?></p>
+                                    
                                 </div>
+                                
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -138,16 +134,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario_email'])) {
 
             <div class="row justify-content-center align-items-center">
                 <div class="col-2 mt-2">
-                    <a href="indexAdmin.php" class="btn ms-6 btn-danger">Volver Atras</a>
+                    <a href="indexAdmin.php" class="mb-4 btn ms-6 btn-danger">Volver Atras</a>
                 </div>
             </div>
         </div>
     </section>
 
     <?php include("footerAdmin.php");
+    // Cerramos la conexión aquí
     mysqli_close($conn); ?>
-
-
+    
 </body>
-
 </html>

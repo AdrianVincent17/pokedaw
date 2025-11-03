@@ -45,15 +45,14 @@ mysqli_close($conn);
 		<div class="container site-content mt-5">
 			<h2 class="text-center text-light mb-4">AÑADIR CARTA</h2>
 
-			<form action="altacarta.php" method="POST" class="col-md-5 mx-auto text-light p-4 ">
-
+			<form action="procesar_añadir.php" method="POST" class="col-md-5 mx-auto text-light p-4 ">
 				<div class="mb-3">
 					<label for="carta_id" class="form-label">Seleccionar Carta</label>
 					<select name="carta_id" id="carta_id" class="form-select" required>
 						<option value="">-- Selecciona una Carta --</option>
 						<?php foreach ($cartas_disponibles as $carta) : ?>
-							<option value="<?php echo $carta['id']; ?>">
-								<?php echo $carta['nombre']; ?>
+							<option value="<?php echo htmlspecialchars($carta['id']); ?>">
+								<?php echo htmlspecialchars($carta['nombre']); ?>
 							</option>
 						<?php endforeach; ?>
 					</select>

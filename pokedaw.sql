@@ -91,9 +91,9 @@ ALTER TABLE `cartas_base`
 -- Indices de la tabla `coleccion`
 --
 ALTER TABLE `coleccion`
-  ADD PRIMARY KEY (`id_user`),
-  ADD KEY `id_carta` (`id_carta`),
-  ADD KEY `id_user` (`id_user`);
+  ADD PRIMARY KEY (`id_user`, `id_carta`),
+  ADD KEY `id_carta` (`id_carta`);
+  
 
 --
 -- Indices de la tabla `usuarios`
