@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2025 a las 22:07:36
+-- Tiempo de generación: 07-11-2025 a las 04:13:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -37,6 +37,21 @@ CREATE TABLE `cartas_base` (
   `imagen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `cartas_base`
+--
+
+INSERT INTO `cartas_base` (`id`, `nombre`, `tipo`, `imagen`) VALUES
+(1, 'Growlithe', 'Fuego', 'carta01.png'),
+(2, 'Arcanine', 'Fuego', 'carta02.png'),
+(3, 'Moltres', 'Fuego', 'carta05.png'),
+(4, 'Ponyta', 'Fuego', 'carta03.png'),
+(5, 'Rapidash', 'Fuego', 'carta04.png'),
+(6, 'Cyndaquil', 'Fuego', 'carta06.png'),
+(7, 'Quilava', 'Fuego', 'carta07.png'),
+(8, 'Typhlosion', 'Fuego', 'carta08.png'),
+(10, 'Slugma', 'Fuego', '1762190905_6908e63948299.png');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +65,17 @@ CREATE TABLE `coleccion` (
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `coleccion`
+--
+
+INSERT INTO `coleccion` (`id_user`, `id_carta`, `cantidad`) VALUES
+('12345688X', 1, 1),
+('12345688X', 4, 1),
+('12345688X', 6, 1),
+('12345688X', 7, 3),
+('12345688X', 8, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +84,7 @@ CREATE TABLE `coleccion` (
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
-  `NIF` varchar(9) NOT NULL,
+  `nif` varchar(9) NOT NULL,
   `email` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellidos` varchar(255) NOT NULL,
@@ -72,9 +98,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`NIF`, `email`, `nombre`, `apellidos`, `telefono`, `pass`, `rol`, `fecha_registro`) VALUES
-('43219842X', 'admin@pokedaw.com', 'Adrián', 'Vicente López', '623411852', '1234', 1, '2025-10-29 21:00:53'),
-('46623571R', 'juan.moya@gmail.com', 'Juan', 'Moya Sayas', '662319744', '1234', 0, '2025-10-29 21:06:50');
+INSERT INTO `usuarios` (`nif`, `email`, `nombre`, `apellidos`, `telefono`, `pass`, `rol`, `fecha_registro`) VALUES
+('12345688X', 'sandra@pokedaw.com', 'Sandra', 'Vicente', '685247480', '1234', 0, '2025-11-03 17:02:42'),
+('43219842X', 'admin@pokedaw.com', 'Adrián', 'Vicente López', '623411852', '1234', 1, '2025-10-29 21:00:53');
 
 --
 -- Índices para tablas volcadas
@@ -91,17 +117,25 @@ ALTER TABLE `cartas_base`
 -- Indices de la tabla `coleccion`
 --
 ALTER TABLE `coleccion`
-  ADD PRIMARY KEY (`id_user`, `id_carta`),
+  ADD PRIMARY KEY (`id_user`,`id_carta`),
   ADD KEY `id_carta` (`id_carta`);
-  
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`NIF`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD KEY `NIF` (`NIF`);
+  ADD PRIMARY KEY (`nif`),
+  ADD KEY `nif` (`nif`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `cartas_base`
+--
+ALTER TABLE `cartas_base`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
